@@ -11,7 +11,7 @@ body {
     background-image: url('../img/background.png');
 }
 .content {
-    width: 70%;
+    width: 40%;
     margin: 0 auto;
     padding: 0;
     text-align: center;
@@ -37,7 +37,7 @@ section {
 button {
     background-color: #66cc99;
     padding: 4px 10px 4px 10px;
-    border: 2px solid #000;
+    border: 1px solid #020;
     color: #fff;
     font-size: 2rem;
     margin-top: 2rem;
@@ -46,8 +46,30 @@ button {
     cursor: pointer;
 }
 input {
+    border: 2px solid #666677;
     font-size: 2rem;
+    padding: 0.5rem;
 }
+#results {
+    text-align: left;
+}
+#results > div {
+    background-color: #555566;
+    margin: 1rem;
+    padding: 4px 10px 4px 10px;
+}
+a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #fffaff;
+}
+#results > div:hover {
+    background-color: #666677;
+    color: #ffff99;
+}
+a:hover {
+    color: #ffff99;
+}
+
 footer {
     padding: 20px 40px 40px 40px;
     color: #666677;
