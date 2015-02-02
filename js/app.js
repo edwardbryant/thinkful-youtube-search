@@ -18,26 +18,28 @@ $(document).ready( function() {
 
 function requestData(query_term) {
     var params = {
-        s: query_term,
-        r: 'json'
+        part: 'snippet',
+        key: 'AIzaSyBli63vMFktfeg5HR5aQ9G79bGi5LzbV2E',
+        q: query_term
     };
-    var url = 'http://www.omdbapi.com';
+    var url = 'https://www.googleapis.com/youtube/v3/search';
     $.getJSON(url, params, function(data){
-        showResults(data.Search);
+        showResults(data.items);
     });
 }
 function showResults(data) {
+    console.log(data);
+    
     var results = "";
     $.each(data, function(index,value){
-        if (value.Type == "movie") {
-            var icon = "<i class=\"fa fa-film\"></i>";
-        } else if (value.Type == "series") {
-            var icon = "<i class=\"fa fa-desktop\"></i>";
-        } else {
-            var icon = "<i class=\"fa fa-square-o\"></i>";
-        }
-        results += "<div> " + icon + " &nbsp; <a href=\"http://www.imdb.com/title/" + value.imdbID + "/\" target=\"_blank\">" + value.Title + "</a></div>";
-    });    
+        var icon = "<i class=\"fa fa-youtube-play\"></i>";
+        results += "<div> " + icon + " &nbsp; <a href=\"https://www.youtube.com/watch?v=" + value.id.videoId + "/\" target=\"_blank\">" + value.snippet.title + "</a></div>";
+    });
     var results_node = $(results);
-    $('#results').append(results_node);
+    $('#results').fadeOut(400, function() {
+        $(this).find('div').remove();
+        $(this).append(results_node);
+        $(this).fadeIn(400);
+    });
+    
 }
