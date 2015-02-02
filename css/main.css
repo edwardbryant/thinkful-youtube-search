@@ -71,7 +71,11 @@ a:link, a:active, a:visited {
 a:hover {
     color: #ffff99;
 }
-
+#results .thumb {
+    text-align: center;
+    display: block;
+    margin: 6px auto 6px auto; 
+}
 footer {
     padding: 20px 40px 40px 40px;
     color: #666677;

@@ -33,7 +33,7 @@ function showResults(data) {
     var results = "";
     $.each(data, function(index,value){
         var icon = "<i class=\"fa fa-youtube-play\"></i>";
-        results += "<div> " + icon + " &nbsp; <a href=\"https://www.youtube.com/watch?v=" + value.id.videoId + "/\" target=\"_blank\">" + value.snippet.title + "</a></div>";
+        results += "<div> " + icon + " &nbsp; <a href=\"https://www.youtube.com/watch?v=" + value.id.videoId + "/\" target=\"_blank\">" + value.snippet.title + "</a> <div class='thumb'><a href=\"https://www.youtube.com/watch?v=" + value.id.videoId + "/\" target=\"_blank\"><img src='" + value.snippet.thumbnails.medium.url + "'></a></div></div>";
     });
     var results_node = $(results);
     $('#results').fadeOut(400, function() {
